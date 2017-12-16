@@ -11,10 +11,10 @@ namespace AppWithGui.ViewModel
         {
             var users = new ObservableCollection<User>
             {
-                new User { FirstName = "Teo", LastName = "Karlsson" },
-                new User { FirstName = "Helen", LastName = "Karlsson" },
-                new User { FirstName = "Lukas", LastName = "Karlsson" },
-                new User { FirstName = "Eric", LastName = "Backhage" }
+                new User { FirstName = "Eric", LastName = "Backhage" },
+                new User { FirstName = "Onkel", LastName = "Tom" },
+                new User { FirstName = "Sten", LastName = "Strong" },
+                new User { FirstName = "Max", LastName = "Power" },
             };
 
             Users = users;
