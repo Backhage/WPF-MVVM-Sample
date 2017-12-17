@@ -13,7 +13,6 @@ namespace AppWithGui
         private void UserViewControl_Loaded(object sender, RoutedEventArgs e)
         {
             var userViewModel = new UserViewModel();
-            userViewModel.LoadUsers();
             UserViewControl.DataContext = userViewModel;
         }
     }

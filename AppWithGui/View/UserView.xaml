@@ -14,7 +14,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBox Text="{Binding Path=FirstName, Mode=TwoWay}" Width="100" Margin="3 5 3 5" />
                             <TextBox Text="{Binding Path=LastName, Mode=TwoWay}" Width="100" Margin="0 5 3 5" />
-                            <TextBox Text="{Binding Path=FullName, Mode=OneWay}" Width="100" Margin="0 5 3 5" />
+                            <Label Content="{Binding Path=FullName, Mode=OneWay}"  Width="100" Margin="0 5 3 5" />
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

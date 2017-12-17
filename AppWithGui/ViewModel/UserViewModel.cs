@@ -7,7 +7,12 @@ namespace AppWithGui.ViewModel
     {
         public ObservableCollection<User> Users { get; set; }
 
-        public void LoadUsers()
+        public UserViewModel()
+        {
+            LoadUsers();
+        }
+
+        private void LoadUsers()
         {
             var users = new ObservableCollection<User>
             {
