@@ -3,22 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AppWithGui.View"
+             xmlns:data="clr-namespace:AppWithGui.Model"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:User}">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding Path=FirstName, Mode=TwoWay}" Width="100" Margin="3 5 3 5" />
+                <TextBox Text="{Binding Path=LastName, Mode=TwoWay}" Width="100" Margin="0 5 3 5" />
+                <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" Width="100" Margin="0 5 3 5" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel HorizontalAlignment="Left">
-            <ItemsControl ItemsSource="{Binding Path=Users}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="{Binding Path=FirstName, Mode=TwoWay}" Width="100" Margin="3 5 3 5" />
-                            <TextBox Text="{Binding Path=LastName, Mode=TwoWay}" Width="100" Margin="0 5 3 5" />
-                            <Label Content="{Binding Path=FullName, Mode=OneWay}"  Width="100" Margin="0 5 3 5" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+        <StackPanel Orientation="Horizontal">
+            <ListBox ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" />
+            <Button Content="Delete" Command="{Binding Path=DeleteCommand}" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
         </StackPanel>
     </Grid>
 </UserControl>
